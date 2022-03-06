@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "554213367762",
+    "project_id": "healthy-friends-80c8e",
+    "storage_bucket": "healthy-friends-80c8e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:554213367762:android:3a7b509b4d2d022744f20b",
+        "android_client_info": {
+          "package_name": "com.speechdelay.speech_delay"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "554213367762-iak5gj7g22mt27mcsktpjd0os1tmo6ct.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7wyCXP3Vh6zNsHY8HdiRvNOxPFIjCghU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "554213367762-iak5gj7g22mt27mcsktpjd0os1tmo6ct.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
