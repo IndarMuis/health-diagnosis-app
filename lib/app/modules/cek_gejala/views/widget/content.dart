@@ -155,12 +155,12 @@ class Content extends GetView<CekGejalaController> {
       );
     }
 
-    Widget inputStatusGejala() {
+    asupanGizi() {
       return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            "Status Gejala",
+            "Status Gizi",
             style: primaryTextStyle.copyWith(fontSize: 20, fontWeight: medium),
           ),
           SizedBox(
@@ -170,7 +170,45 @@ class Content extends GetView<CekGejalaController> {
             mode: Mode.MENU,
             showClearButton: true,
             showSelectedItems: true,
-            items: ["RINGAN", "BERAT"],
+            items: [
+              "Baik",
+              "Cukup",
+              "TIdak Cukup",
+            ],
+            dropdownSearchDecoration: InputDecoration(
+                border:
+                    OutlineInputBorder(borderRadius: BorderRadius.circular(15)),
+                contentPadding: EdgeInsets.all(15),
+                hintText: "Pilih"),
+            onChanged: (value) {
+              controller.inputStatusGejala.value = value!;
+            },
+          )
+        ],
+      );
+    }
+
+    Widget inputStatusGejala() {
+      return Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            "Gejala",
+            style: primaryTextStyle.copyWith(fontSize: 20, fontWeight: medium),
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          DropdownSearch<String>(
+            mode: Mode.MENU,
+            showClearButton: true,
+            showSelectedItems: true,
+            items: [
+              "Kesulitan memahami perintah",
+              "Tidak merespon suara",
+              "Tidak memiliki ketertarikan berkomunikasi",
+              "Menyampaikan sesuatu dengan gerakan",
+            ],
             dropdownSearchDecoration: InputDecoration(
                 border:
                     OutlineInputBorder(borderRadius: BorderRadius.circular(15)),
@@ -186,7 +224,7 @@ class Content extends GetView<CekGejalaController> {
 
     Widget processButton() {
       return Container(
-        height: 50,
+        height: 55,
         width: double.infinity,
         child: ElevatedButton(
           child: Text("Cek Gejala"),
@@ -194,12 +232,11 @@ class Content extends GetView<CekGejalaController> {
             print(controller.inputNama.text);
             print(controller.inputStatusGejala.value);
             controller.addUser(
-              nama: controller.inputNama.text.toLowerCase(),
-              tanggalLahir: controller.inputTanggal.text,
-              umur: int.parse(controller.inputUmur.text),
-              jenisKelamin: controller.inputJenisKelamin.value.toLowerCase(),
-              status: controller.inputStatusGejala.value.toLowerCase()
-            );
+                nama: controller.inputNama.text.toLowerCase(),
+                tanggalLahir: controller.inputTanggal.text,
+                umur: int.parse(controller.inputUmur.text),
+                jenisKelamin: controller.inputJenisKelamin.value.toLowerCase(),
+                status: controller.inputStatusGejala.value.toLowerCase());
           },
           style: ElevatedButton.styleFrom(
               primary: primaryColor,
@@ -210,7 +247,7 @@ class Content extends GetView<CekGejalaController> {
     }
 
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: defaultMargin),
+      padding: EdgeInsets.symmetric(horizontal: defaultMargin, vertical: defaultMargin),
       // margin: EdgeInsets.symmetric(vertical: defaultMargin),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -240,6 +277,10 @@ class Content extends GetView<CekGejalaController> {
           inputJenisKelamin(),
           SizedBox(
             height: 20,
+          ),
+          asupanGizi(),
+          SizedBox(
+            height: 40,
           ),
           inputStatusGejala(),
           SizedBox(

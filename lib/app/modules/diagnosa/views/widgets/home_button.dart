@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/route_manager.dart';
 import 'package:speech_delay/app/modules/theme.dart';
+import 'package:speech_delay/app/routes/app_pages.dart';
 
 class HomeButton extends StatelessWidget {
   const HomeButton({Key? key}) : super(key: key);
@@ -7,10 +9,12 @@ class HomeButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 50,
+      height: 55,
       width: double.infinity,
       child: ElevatedButton(
-        onPressed: () {},
+        onPressed: () {
+          Get.toNamed(Routes.HOME);
+        },
         child: Text(
           "Selesai",
           style: primaryTextStyle.copyWith(fontSize: 20, color: primaryTextColor),

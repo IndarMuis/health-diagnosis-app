@@ -10,13 +10,14 @@ class DiagnosaController extends GetxController {
   var nama = "".obs;
   var umur = "".obs;
   var jenisKelamin = "".obs;
-  var status = "".obs;
+  var gejala = "".obs;
   @override
   void onInit() {
     nama.value = user.inputNama.text;
     umur.value = user.inputUmur.text;
     jenisKelamin.value = user.inputJenisKelamin.value;
-    status.value = user.inputStatusGejala.value;
+    gejala.value = user.inputStatusGejala.value;
+    
     super.onInit();
   }
 

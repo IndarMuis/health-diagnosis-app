@@ -13,8 +13,10 @@ class CekGejalaController extends GetxController {
   TextEditingController inputNama = TextEditingController();
   TextEditingController inputUmur = TextEditingController();
   TextEditingController inputPendidikan = TextEditingController();
+  
   var inputJenisKelamin = "".obs;
   var inputStatusGejala = "".obs;
+  var inputStatusGizi = "".obs;
 
   FirebaseFirestore firestore = FirebaseFirestore.instance;
 
@@ -40,7 +42,7 @@ class CekGejalaController extends GetxController {
           () => CircularProgressIndicator(
                 color: primaryColor,
               ));
-      Get.toNamed(Routes.DIAGNOSA);
+      Get.offAndToNamed(Routes.DIAGNOSA);
     } catch (e) {
       Get.defaultDialog(
         title: "Terjadi kesalahan",

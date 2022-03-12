@@ -34,34 +34,96 @@ class Menu extends StatelessWidget {
             SizedBox(
               width: 20,
             ),
-            CardMenu(
-              color: secondaryColor,
-              text: "EDUKASI",
-              assetImage: "education.png",
+            Stack(
+              children: [
+                CardMenu(
+                  color: secondaryColor,
+                  text: "EDUKASI",
+                  assetImage: "education.png",
+                ),
+                Container(
+                  height: 120,
+                  width: MediaQuery.of(context).size.width / 2 - 30,
+                  decoration: BoxDecoration(
+                      color: Colors.black.withOpacity(0.7),
+                      borderRadius: BorderRadius.circular(20)),
+                  child: Center(
+                    child: Text(
+                      "COOMING SOON",
+                      style: primaryTextStyle.copyWith(
+                        color: Colors.white,
+                        fontWeight: light,
+                        fontSize: 17
+                      ),
+                    ),
+                  ),
+                )
+              ],
             ),
           ],
         ),
-           SizedBox(
+        SizedBox(
           height: 20,
         ),
         Row(
           children: [
-            CardMenu(
-              color: secondaryColor,
-              text: "CHECK UP",
-              assetImage: "checkup.png",
+            Stack(
+              children: [
+                CardMenu(
+                  color: secondaryColor,
+                  text: "CHECK UP",
+                  assetImage: "checkup.png",
+                ),
+                Container(
+                  height: 120,
+                  width: MediaQuery.of(context).size.width / 2 - 30,
+                  decoration: BoxDecoration(
+                      color: Colors.black.withOpacity(0.7),
+                      borderRadius: BorderRadius.circular(20)),
+                  child: Center(
+                    child: Text(
+                      "COOMING SOON",
+                      style: primaryTextStyle.copyWith(
+                        color: Colors.white,
+                        fontWeight: light,
+                        fontSize: 17
+                      ),
+                    ),
+                  ),
+                )
+              ],
             ),
             SizedBox(
               width: 20,
             ),
-            CardMenu(
-              color: primaryColor,
-              text: "TIPS DAN TRIK",
-              assetImage: "consultation.png",
+            Stack(
+              children: [
+                CardMenu(
+                  color: primaryColor,
+                  text: "TIPS",
+                  assetImage: "consultation.png",
+                ),
+                Container(
+                  height: 120,
+                  width: MediaQuery.of(context).size.width / 2 - 30,
+                  decoration: BoxDecoration(
+                      color: Colors.black.withOpacity(0.7),
+                      borderRadius: BorderRadius.circular(20)),
+                  child: Center(
+                    child: Text(
+                      "COOMING SOON",
+                      style: primaryTextStyle.copyWith(
+                        color: Colors.white,
+                        fontWeight: light,
+                        fontSize: 17
+                      ),
+                    ),
+                  ),
+                )
+              ],
             ),
           ],
         ),
-
       ],
     );
   }
